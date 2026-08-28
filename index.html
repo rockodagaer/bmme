@@ -38,6 +38,14 @@
     <h1 class="clan-name">Big Muscly Men Enjoyers</h1>
     <p class="tagline">Proud owners of the <span class="highlight">Lotus' Gardens</span> alliance.</p>
 
+    <div class="tags">
+      <span class="tag">MR7+</span>
+      <span class="tag">English only</span>
+      <span class="tag">Storm clan</span>
+      <span class="tag">300+ in the alliance</span>
+      <span class="tag">Events &amp; giveaways</span>
+    </div>
+
     <hr class="divider">
 
     <section class="join">
@@ -51,6 +59,7 @@
         </svg>
         Join our Discord
       </a>
+      <p class="discord-stats" id="discordStats" aria-live="polite"></p>
     </section>
   </main>
 
@@ -62,6 +71,23 @@
   <footer class="site-footer">
     <p>Big Muscly Men Enjoyers — Warframe Clan</p>
   </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById('discordStats');
+      if (!el) return;
+      fetch('https://discord.com/api/v10/invites/sdVGDv3Wxt?with_counts=true')
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function (data) {
+          if (!data || typeof data.approximate_member_count !== 'number') return;
+          el.textContent = data.approximate_member_count + ' members · ' + data.approximate_presence_count + ' online';
+          el.classList.add('is-loaded');
+        })
+        .catch(function () {
+          // Quietly hide the stat line if the request fails (blocked, offline, etc.)
+        });
+    })();
+  </script>
 
 </body>
 </html>
