@@ -3,6 +3,8 @@
   --gold: #c8a565;
   --gold-bright: #e0bd7e;
   --gold-dim: #6d5c3c;
+  --cyan: #5fd8d4;
+  --cyan-bright: #8ff0ec;
   --text: #eae5d9;
   --text-muted: #948e7f;
 }
@@ -25,6 +27,42 @@ body {
   min-height: 100vh;
 }
 
+.banner {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  background: #05070a;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(19, 18, 16, 0) 55%, var(--bg) 100%);
+  pointer-events: none;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dim), var(--cyan), var(--gold-bright));
+  z-index: 1;
+}
+
 .page {
   position: relative;
   flex: 1;
@@ -33,40 +71,13 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 64px 24px 48px;
+  padding: 48px 24px 48px;
   overflow: hidden;
-}
-
-.logo-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 420px;
-  height: 420px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(200, 165, 101, 0.22) 0%, rgba(200, 165, 101, 0) 68%);
-  pointer-events: none;
-}
-
-.logo {
-  position: relative;
-  width: 148px;
-  height: 148px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 0 1px var(--gold-dim);
 }
 
 .clan-name {
   position: relative;
-  margin: 26px 0 10px;
+  margin: 0 0 10px;
   font-size: clamp(24px, 4.4vw, 34px);
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -81,8 +92,9 @@ body {
 }
 
 .highlight {
-  color: var(--gold-bright);
+  color: var(--cyan-bright);
   font-weight: 600;
+  text-shadow: 0 0 14px rgba(95, 216, 212, 0.45);
 }
 
 .divider {
@@ -90,7 +102,7 @@ body {
   height: 1px;
   margin: 40px 0 36px;
   border: none;
-  background: var(--gold-dim);
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
 }
 
 .join {
@@ -120,13 +132,15 @@ body {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .discord-btn:hover,
 .discord-btn:focus-visible {
   background-color: var(--gold);
+  border-color: var(--cyan);
   color: #131210;
+  box-shadow: 0 0 22px rgba(95, 216, 212, 0.35);
 }
 
 .discord-icon {
@@ -166,8 +180,8 @@ body {
 }
 
 @media (max-width: 420px) {
-  .logo {
-    width: 120px;
-    height: 120px;
+  .banner img {
+    max-height: 220px;
+    object-position: center 28%;
   }
 }
