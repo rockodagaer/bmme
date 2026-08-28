@@ -135,6 +135,25 @@ body {
   fill: currentColor;
 }
 
+.credits {
+  margin: 0;
+  padding: 0 24px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--gold-dim);
+}
+
+.credits a {
+  color: var(--gold-dim);
+  text-decoration: underline;
+}
+
+.credits a:hover,
+.credits a:focus-visible {
+  color: var(--gold);
+}
+
 .site-footer {
   padding: 18px 24px 26px;
   text-align: center;
