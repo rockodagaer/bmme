@@ -179,9 +179,9 @@ body {
   margin: 0;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 640px) {
   .banner img {
-    max-height: 220px;
-    object-position: center 28%;
+    max-height: 48vh;
+    object-position: center 34%;
   }
 }
