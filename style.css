@@ -232,3 +232,105 @@ body {
     object-position: center 34%;
   }
 }
+
+
+
+
+
+/* Alliance page */
+.alliance-page {
+  justify-content: flex-start;
+  padding-top: 40px;
+  overflow: visible;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--gold-bright);
+}
+
+.alliance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 220px));
+  gap: 18px;
+  max-width: 480px;
+}
+
+@media (max-width: 640px) {
+  .alliance-grid {
+    grid-template-columns: minmax(0, 260px);
+  }
+}
+
+.alliance-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.alliance-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.alliance-logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold-dim);
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--gold-dim);
+}
+
+.alliance-card-name {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.alliance-card-meta {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.alliance-card-desc {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.alliance-card-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-bright);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.alliance-card-link:hover,
+.alliance-card-link:focus-visible {
+  color: var(--cyan-bright);
+  border-color: var(--cyan);
+}
