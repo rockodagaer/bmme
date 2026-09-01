@@ -46,6 +46,8 @@
       <span class="tag">Events &amp; giveaways</span>
     </div>
 
+    <a class="nav-link" href="alliance.html">Explore the alliance &rarr;</a>
+
     <hr class="divider">
 
     <section class="join">
@@ -76,16 +78,68 @@
     (function () {
       var el = document.getElementById('discordStats');
       if (!el) return;
-      fetch('https://discord.com/api/v10/invites/sdVGDv3Wxt?with_counts=true')
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-        .then(function (data) {
-          if (!data || typeof data.approximate_member_count !== 'number') return;
-          el.textContent = data.approximate_member_count + ' members · ' + data.approximate_presence_count + ' online';
-          el.classList.add('is-loaded');
-        })
-        .catch(function () {
-          // Quietly hide the stat line if the request fails (blocked, offline, etc.)
-        });
+
+      var CACHE_KEY = 'bmme_discord_stats';
+      var CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+      function render(count, online) {
+        el.textContent = count + ' members · ' + online + ' online';
+        el.classList.add('is-loaded');
+      }
+
+      function readCache() {
+        try {
+          var raw = sessionStorage.getItem(CACHE_KEY);
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function writeCache(count, online) {
+        try {
+          sessionStorage.setItem(CACHE_KEY, JSON.stringify({ count: count, online: online, ts: Date.now() }));
+        } catch (e) {
+          // storage unavailable (private browsing, etc.) — safe to ignore
+        }
+      }
+
+      // Discord's invite endpoint rate-limits per IP. A single failed request
+      // used to mean the stat line just stayed blank for the rest of the
+      // session. This retries transient failures (respecting Retry-After on a
+      // 429) and caches the last good result so once it loads once, it stays
+      // visible even if a later refresh gets rate-limited.
+      function fetchStats(attempt) {
+        attempt = attempt || 0;
+        fetch('https://discord.com/api/v10/invites/sdVGDv3Wxt?with_counts=true')
+          .then(function (r) {
+            if (r.status === 429 && attempt < 2) {
+              var retryAfter = parseFloat(r.headers.get('retry-after')) || 0.5 * Math.pow(3, attempt);
+              setTimeout(function () { fetchStats(attempt + 1); }, retryAfter * 1000);
+              return Promise.reject('rate-limited');
+            }
+            return r.ok ? r.json() : Promise.reject('bad-response');
+          })
+          .then(function (data) {
+            if (!data || typeof data.approximate_member_count !== 'number') return;
+            render(data.approximate_member_count, data.approximate_presence_count);
+            writeCache(data.approximate_member_count, data.approximate_presence_count);
+          })
+          .catch(function (reason) {
+            if (reason !== 'rate-limited' && attempt < 2) {
+              setTimeout(function () { fetchStats(attempt + 1); }, 800 * (attempt + 1));
+            }
+            // Otherwise fail quietly — a cached value (if any) is already showing.
+          });
+      }
+
+      var cached = readCache();
+      if (cached) {
+        render(cached.count, cached.online);
+      }
+      if (!cached || Date.now() - cached.ts > CACHE_TTL) {
+        fetchStats(0);
+      }
     })();
   </script>
 
