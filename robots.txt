@@ -16,3 +16,4 @@ Disallow: /images/Styanax%20960%20x%20540.webp
 Allow: /
 
 Sitemap: https://bmme.online/sitemap.xml
+Sitemap: https://bmme.online/sitemap-images.xml
