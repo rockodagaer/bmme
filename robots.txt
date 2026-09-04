@@ -1,4 +1,18 @@
 User-agent: *
+Disallow: /images/Styanax*
+Disallow: /images/Styanax%20*
+Disallow: /images/Styanax 1500x500.png
+Disallow: /images/Styanax 1500x500.webp
+Disallow: /images/Styanax 1920 x 1080.png
+Disallow: /images/Styanax 1920 x 1080.webp
+Disallow: /images/Styanax 960 x 540.png
+Disallow: /images/Styanax 960 x 540.webp
+Disallow: /images/Styanax%201500x500.png
+Disallow: /images/Styanax%201500x500.webp
+Disallow: /images/Styanax%201920%20x%201080.png
+Disallow: /images/Styanax%201920%20x%201080.webp
+Disallow: /images/Styanax%20960%20x%20540.png
+Disallow: /images/Styanax%20960%20x%20540.webp
 Allow: /
 
 Sitemap: https://bmme.online/sitemap.xml
