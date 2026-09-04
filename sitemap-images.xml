@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://bmme.online/events/index.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bmme.online/events/images/Dante%20-%202.jpg</image:loc>
+      <image:title>Gauss Prime Fashionframe submission by Undead_Dante</image:title>
+      <image:caption>&apos;Quicksilver takes form&apos;</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bmme.online/events/images/xodabiox%20-%203.jpg</image:loc>
+      <image:title>Protea Prime Fashionframe submission by XODabiOX</image:title>
+      <image:caption>Probably my favorite fashion frame I&apos;ve done &lt;3</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bmme.online/events/images/BurgerSlayin%20-%201.jpg</image:loc>
+      <image:title>Mirage Prime Fashionframe submission by BurgerSlayin</image:title>
+      <image:caption>Color palette: Red and White &#183; Attachments: Hexis Arm Plates, Hexis Spurs, Tealtrian Ephemera</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bmme.online/events/images/Popz%20-%203.jpg</image:loc>
+      <image:title>Ivara Prime Fashionframe submission by Mirny_13</image:title>
+      <image:caption>Kalymos, I shall hunt that yarn ball to the end of the Origin System.</image:caption>
+    </image:image>
+  </url>
+</urlset>
