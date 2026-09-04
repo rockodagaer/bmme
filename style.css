@@ -426,11 +426,19 @@ a.tag:active {
 }
 
 @media (max-width: 640px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+
   #explore-alliance-btn,
   #explore-alliance-sep,
+  #nav-alliance,
+  #nav-alliance-sep,
+  #sep-alliance,
   .nav-link-alliance,
   .nav-sep-alliance {
-    display: none;
+    display: none !important;
   }
 }
 
