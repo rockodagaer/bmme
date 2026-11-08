@@ -383,6 +383,43 @@ a.tag:active {
   margin: 0;
 }
 
+.donate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 16px;
+}
+
+.site-footer .donate {
+  justify-content: center;
+}
+
+.donate .donate-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.donate .donate-btn {
+  display: inline-flex;
+  padding: 6px 12px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.donate .donate-btn:hover,
+.donate .donate-btn:focus-visible {
+  border-color: var(--cyan);
+  color: var(--cyan-bright);
+}
+
 @media (max-width: 640px) {
   html, body {
     height: auto;
