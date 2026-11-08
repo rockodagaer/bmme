@@ -14,7 +14,7 @@ li{margin:.3rem 0}
 <p><strong>Effective date:</strong> 8 November 2026<br>
 <strong>Operator:</strong> __v33__<br>
 <strong>Contact:</strong> theaft3rmath@proton.me</p>
-<p>Fembot is a small, hobby Discord bot: a joke chatbot with some Warframe information, a few fun commands and a few moderation tools. This page explains what it does with information. In short: it keeps very little, it keeps it anonymously where it can, and it never sells or shares it.</p>
+<p>Fembot is a small, hobby Discord bot: a joke chatbot with some Warframe information, a few fun commands and a few moderation tools. This page explains what it does with information. In short: it keeps very little, it keeps it anonymously where it can, and it never sells it. It is only shared in the limited ways listed in section 4, which include AI tools used to assist development.</p>
 <p>The same summary is available inside Discord with the <code>/about</code> command.</p>
 <h2>1. What the bot can see</h2>
 <p>To work, the bot must be allowed to read messages in the channels it can access (Discord&#x27;s &quot;Message Content&quot; permission) and to see members and their roles (Discord&#x27;s &quot;Server Members&quot; permission). It looks at most messages only for one purpose, the banned-emoji check described in section 3, and keeps nothing from them. It only <em>responds to</em> messages that mention it or reply to it.</p>
@@ -29,7 +29,7 @@ li{margin:.3rem 0}
 </ul>
 <p>It does <strong>not</strong> contain your name, user ID, server, channel, message ID or exact time. Messages containing words on the bot&#x27;s slur list are never saved. Entries are deleted automatically after <strong>30 days</strong>. Text you send with <code>/feedback</code> is saved the same way (up to 1,000 characters).</p>
 <p>The cleaning is automatic and cannot catch everything, for example a name typed in plain text, so please don&#x27;t put personal information in messages to the bot.</p>
-<p>The log is read by the operator only, for debugging and improving the bot. It may also be kept and used where necessary for legal, safety or security reasons, for example to investigate abuse or to respond to a lawful request.</p>
+<p>The log is read by the operator, for debugging and improving the bot, and may be processed by AI tools used to assist development (see section 4). It may also be kept and used where necessary for legal, safety or security reasons, for example to investigate abuse or to respond to a lawful request.</p>
 <p><strong>b) Your storage opt-out.</strong> <code>/optout storage</code> stops the bot from saving any of your messages. To remember your choice, the bot stores a one-way keyed hash of your Discord user ID (not the ID itself) and nothing else about you. It is kept until you opt back in with <code>/optin storage</code>.</p>
 <p><strong>c) Server settings.</strong> For each server it is in, the bot stores the choices that server&#x27;s administrators make with <code>/settings</code>: whether the welcome message is on, which picture it uses, and role and channel IDs (moderator roles, the mute role, the notice channel, roles <code>/giverole</code> may hand out). It also stores that server&#x27;s banned-emoji list. This contains no information about any person. It is kept until the bot is removed from the server (or you ask for it to be deleted).</p>
 <p><strong>d) Mood.</strong> The bot has a daily &quot;mood&quot; number for each server. It stores only the server ID, the date and the number. It is nudged up or down by friendly or rude messages, but nothing about who or what caused it is kept.</p>
@@ -47,22 +47,25 @@ li{margin:.3rem 0}
 <ul>
 <li><strong>Discord</strong>, which delivers the messages and commands (see Discord&#x27;s own privacy policy);</li>
 <li>the <strong>hosting provider</strong> where the bot&#x27;s files are kept;</li>
+<li><strong>AI development tools</strong> that may be used to assist in building and maintaining the bot (see below);</li>
 <li>anyone to whom the law requires the operator to disclose information.</li>
 </ul>
-<p>Information is never sold, used for advertising, or used to train machine-learning or AI models.</p>
+<p>Information is never sold or used for advertising.</p>
+<p><strong>AI development tools.</strong> Third-party AI tools (such as Anthropic&#x27;s Claude) may be used to assist the development and maintenance of the bot. In that context, entries from the anonymous log described in section 2a (the cleaned message text, the date, and the other fields listed there) may be processed by those tools, and have been. They are never given user IDs, names, servers, the opt-out hashes, the secret key used to make them, or the bot&#x27;s login token, and they never receive anything from people who have opted out, because their messages aren&#x27;t saved. The bot itself does not send live messages to any AI service. Because log entries are anonymous, it is not possible to tell whose they are. These tools handle that text under their providers&#x27; own terms and privacy policies, which are outside our control; it is not used by us to train AI models. Please don&#x27;t put personal information in messages to the bot, and use <code>/optout storage</code> if you don&#x27;t want your messages stored.</p>
 <h2>5. Your choices and rights</h2>
 <ul>
 <li>Use <code>/optout storage</code> at any time to stop your messages being saved, and <code>/optstatus storage</code> to check.</li>
-<li>Because log entries are anonymous, the bot cannot find or delete one particular person&#x27;s entries afterwards. Opting out prevents future saving, and everything is deleted after 30 days. If you believe an entry contains information about you, contact the operator with the approximate date and wording and it will be removed.</li>
-<li>You can ask the operator what information is held about you or to delete it, using the contact above. For the opt-out hash, the operator can remove it on request.</li>
+<li>Because log entries are anonymous, the bot cannot find or delete one particular person&#x27;s entries afterwards. Opting out prevents future saving, and everything is deleted after 30 days. If you believe an entry contains information about you, contact the operator with the approximate date and wording and it will be removed from the bot&#x27;s files. Copies already processed by AI development tools (section 4) can&#x27;t be recalled.</li>
+<li>You can ask the operator what information is held about you or to delete it, using the contact above. For the opt-out hash, the operator can remove it on request (which puts you back to the default, so your messages may be stored again unless you opt out again).</li>
 <li>Server administrators can turn off the welcome message and the moderation features, remove the bot from the server at any time, and ask the operator to delete the server&#x27;s settings.</li>
 </ul>
 <h2>6. Security and retention</h2>
-<p>The bot&#x27;s files are kept on a private server that only the operator can access. The anonymous log is deleted after 30 days; opt-out hashes are kept until you opt in again; server settings and moods are kept until the bot leaves the server. Backups of these files may exist for a short time.</p>
+<p>The bot&#x27;s files are kept on a private server that only the operator can access. The anonymous log is deleted after 30 days; opt-out hashes are kept until you opt in again; server settings, banned-emoji lists and moods are kept until the bot leaves the server. Backups of these files may exist for a short time.</p>
+<p><strong>If a server removes the bot.</strong> The server&#x27;s saved data is deleted straight away if the bot is online when it is removed. If the bot is offline at that moment, the data stays until the bot next checks, which it does daily once it is running again, and it deletes the data of servers it hasn&#x27;t been in for 7 days. To be sure that a server&#x27;s data is deleted at once, contact the operator directly. This data contains no information about any person.</p>
 <h2>7. Children</h2>
 <p>Discord requires its users to be at least 13 years old (or the minimum age in their country). The bot is not aimed at children and does not knowingly collect information from anyone under that age.</p>
 <h2>8. Changes</h2>
 <p>If this policy changes, the effective date above will be updated. Significant changes will also be reflected in <code>/about</code>.</p>
 <h2>9. Contact</h2>
-<p>Questions or requests: see the contact at the top of this page.</p>
+<p>Questions or requests: see the contact at the top of this page. The bot&#x27;s <a href="terms.html">Terms of Service</a> apply too.</p>
 </main></body></html>
