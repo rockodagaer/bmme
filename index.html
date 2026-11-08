@@ -23,6 +23,7 @@
 
   <link rel="icon" type="image/png" href="images/logo.webp">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 
 <script type="application/ld+json">
 {
@@ -36,58 +37,200 @@
 </script>
   
 </head>
-<body>
+<body class="home">
 
-  <div class="banner">
-    <picture>
-      <source media="(max-width: 640px)" srcset="images/Styanax%20960%20x%20540.webp">
-      <img src="images/Styanax%201500x500.webp" alt="Big Muscly Men Enjoyers banner featuring Warframe Styanax artwork by Auri Arts" width="1500" height="500" fetchpriority="high">
-    </picture>
-  </div>
-
-  <main class="page">
-
-    <h1 class="clan-name">Big Muscly Men Enjoyers</h1>
-    <p class="tagline">Proud members of the <span class="highlight">Lotus' Gardens</span> alliance.</p>
-
-    <div class="tags">
-      <a class="tag" href="/about/language-requirements" id="language-requirement-tag">English only</a>
-      <a class="tag" href="/about/about-tiers" id="mountain-clan-tag">Mountain clan</a>
-      <a class="tag" href="alliance.html" id="alliance-tag">1000+ in the alliance</a>
-      <a class="tag" href="events/index.html" id="events-tag">Events &amp; giveaways</a>
-    </div>
-
-    <div class="nav-links" id="home-nav-links">
-      <a class="nav-link nav-link-alliance" id="explore-alliance-btn" href="alliance.html">Explore the alliance &rarr;</a>
-      <span class="nav-sep nav-sep-alliance" id="explore-alliance-sep">&middot;</span>
-      <a class="nav-link" id="faq-nav-btn" href="faq.html">Read the FAQ &rarr;</a>
-      <span class="nav-sep" id="faq-events-sep">&middot;</span>
-      <a class="nav-link" id="events-nav-btn" href="events/index.html">Events &amp; giveaways &rarr;</a>
-    </div>
-
-    <hr class="divider">
-
-    <section class="join">
-      <p class="join-text">
-        Join us on Discord.<br>
-        We'd be happy to have you!
-      </p>
-      <a class="discord-btn" href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">
-        <svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.946 2.419-2.157 2.419z"/>
-        </svg>
-        Join our Discord
+  <header class="home-nav">
+    <div class="home-nav-inner">
+      <a class="home-brand" href="index.html">
+        <img src="images/logo.webp" alt="" width="36" height="36">
+        <span>Big Muscly Men Enjoyers</span>
       </a>
+      <nav class="home-nav-links" aria-label="Main">
+        <a href="alliance.html">Alliance</a>
+        <a href="events/index.html">Events</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about/rules.html">Rules</a>
+      </nav>
+      <a class="home-btn-quiet home-nav-join" href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">Join</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="home-hero">
+      <img class="home-hero-art" src="images/Styanax%201920%20x%201080.webp" alt="Warframe Styanax artwork by Auri Arts" width="1920" height="1080" fetchpriority="high">
+      <div class="home-hero-inner">
+        <img class="home-hero-emblem" src="images/logo.webp" alt="Big Muscly Men Enjoyers clan emblem created by TheTwistedOneKE" width="1024" height="1024">
+        <h1>Big Muscly Men Enjoyers</h1>
+        <dl class="home-stats">
+          <div><dt>Members</dt><dd>~300</dd></div>
+          <div><dt>In the alliance</dt><dd>1000+</dd></div>
+          <div><dt>Clans</dt><dd>3</dd></div>
+        </dl>
+        <p class="home-hero-line">Warframe Mountain clan. Any MR, English speaking.</p>
+        <div class="home-actions">
+          <a class="discord-btn" href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">
+            <svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.946 2.419-2.157 2.419z"/>
+            </svg>
+            Join our Discord
+          </a>
+          <a class="home-btn-quiet" href="faq.html">Read the FAQ</a>
+        </div>
+      </div>
     </section>
+
+    <section class="home-section">
+      <div class="home-wrap home-about">
+        <h2>About the clan</h2>
+        <p class="home-about-lead">"i made this clan because i thought the name would be funny. there's like 300 of us now lol" - Abraham Lincoln</p>
+        <p>We're a Mountain clan in the <a href="alliance.html">Lotus' Gardens</a> alliance. Any mastery rank is welcome. We just ask that you log in at least once every 14 days and are comfortable speaking English.</p>
+        <p>Join the Discord within 48 hours of joining the clan, since that's where everything happens.</p>
+      </div>
+    </section>
+
+    <section class="home-section home-band">
+      <div class="home-wrap">
+        <div class="home-head">
+          <h2>Events &amp; giveaways</h2>
+          <a class="home-btn-quiet" href="events/index.html">All events</a>
+        </div>
+        <div class="home-grid home-grid-3">
+          <article class="home-card">
+            <h3>Fashionframe contests</h3>
+            <p>Clan-wide fashion competitions, announced in the Discord. Sometimes there's a theme.</p>
+          </article>
+          <article class="home-card">
+            <h3>Giveaways</h3>
+            <p>Mostly skins and collections, sometimes plat. Free to enter if you're in the clan and the Discord.</p>
+          </article>
+          <article class="home-card">
+            <h3>Host your own</h3>
+            <p>Members can run their own giveaways. Make a Giveaway/Event Application ticket.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="home-wrap">
+        <div class="home-head">
+          <h2>Member Fashionframe</h2>
+          <a class="home-btn-quiet" href="events/index.html">See more</a>
+        </div>
+        <div class="home-grid home-grid-4">
+          <figure class="home-shot">
+            <img src="images/home-gauss.jpg" alt="Gauss Prime Fashionframe submission by Undead_Dante" loading="lazy">
+            <figcaption><strong>Gauss Prime</strong><span>Undead_Dante</span><em>'Quicksilver takes form'</em></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <img src="images/home-protea.jpg" alt="Protea Prime Fashionframe submission by XODabiOX" loading="lazy">
+            <figcaption><strong>Protea Prime</strong><span>XODabiOX</span><em>Probably my favorite fashion frame I've done &lt;3</em></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <img src="images/home-mirage.jpg" alt="Mirage Prime Fashionframe submission by BurgerSlayin" loading="lazy">
+            <figcaption><strong>Mirage Prime</strong><span>BurgerSlayin</span><em>Color palette: Red and White</em></figcaption>
+          </figure>
+          <figure class="home-shot">
+            <img src="images/home-ivara.jpg" alt="Ivara Prime Fashionframe submission by Mirny_13" loading="lazy">
+            <figcaption><strong>Ivara Prime</strong><span>Mirny_13</span><em>Kalymos, I shall hunt that yarn ball to the end of the Origin System.</em></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-band">
+      <div class="home-wrap">
+        <div class="home-head">
+          <div>
+            <h2>FAQ</h2>
+            <p class="home-sub">read this before you ask me ]:&lt;</p>
+          </div>
+          <a class="home-btn-quiet" href="faq.html">All questions</a>
+        </div>
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>What requirements do you have to join?</summary>
+            <p class="faq-answer">We welcome any mastery rank. We just ask that you log in at least once every 14 days and are comfortable speaking English.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can I join?</summary>
+            <p class="faq-answer">Join our Discord, head to the tickets channel, and open a "Member/Recruitment Application" ticket.</p>
+          </details>
+          <details class="faq-item">
+            <summary>I'm new, is this still a good clan for me?</summary>
+            <p class="faq-answer">Yes, any MR is welcome. We try to be as friendly and helpful to newer players as possible.</p>
+          </details>
+          <details class="faq-item">
+            <summary>I'm not 18+, can I still join?</summary>
+            <p class="faq-answer">Of course. We have a zero-tolerance policy on sexually explicit material, so the clan is suitable for anyone old enough to play the game.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="home-wrap">
+        <h2 class="home-center">Lotus' Gardens</h2>
+        <div class="home-grid home-grid-3">
+          <article class="home-clan">
+            <img src="images/logo.webp" alt="Big Muscly Men Enjoyers clan emblem">
+            <h3>Big Muscly Men Enjoyers</h3>
+            <p class="home-clan-meta">Mountain clan &middot; ~300 members</p>
+            <p>That's us. Events &amp; giveaways, any MR, English-speaking.</p>
+            <a href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">Join our Discord</a>
+          </article>
+          <article class="home-clan">
+            <img src="images/lost%20entities.webp" alt="Lost Entities clan emblem">
+            <h3>Lost Entities</h3>
+            <p class="home-clan-meta">Mountain clan &middot; ~300 members</p>
+            <p>Active members wanted. Full research, no MR requirement, events &amp; giveaways.</p>
+            <a href="https://discord.gg/6WBFcqYFry" target="_blank" rel="noopener noreferrer">Join their Discord</a>
+          </article>
+          <article class="home-clan">
+            <img src="images/rabbit%20masquerade.webp" alt="Rabbit Masquerade clan emblem">
+            <h3>Rabbit Masquerade</h3>
+            <p class="home-clan-meta">Mountain clan &middot; ~300 members</p>
+            <p>Our fellow Mountain clan in the alliance.</p>
+            <a href="https://bun-clan.nekoweb.org/" target="_blank" rel="noopener noreferrer">Visit their site</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-final">
+      <div class="home-wrap">
+        <h2>Join the Discord</h2>
+        <p>Once you're in, open a Member/Recruitment Application ticket.</p>
+        <div class="home-actions">
+          <a class="discord-btn" href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">Join our Discord</a>
+          <a class="home-btn-quiet" href="about/rules.html">Read the rules</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <p class="credits">
-    Special thanks to <a href="https://thetwistedoneke.carrd.co/" target="_blank" rel="noopener noreferrer">TheTwistedOneKE</a> for creating our clan emblem.<br>
-    Special thanks to <a href="https://vgen.co/Auri_Arts" target="_blank" rel="noopener noreferrer">Auri Arts</a> for creating our banner.
-  </p>
-  
-  <footer class="site-footer">
-    <p>Big Muscly Men Enjoyers — Warframe Clan</p>
+  <footer class="home-footer">
+    <div class="home-wrap home-footer-grid">
+      <div>
+        <p class="home-footer-name">Big Muscly Men Enjoyers</p>
+        <p>Emblem by <a href="https://thetwistedoneke.carrd.co/" target="_blank" rel="noopener noreferrer">TheTwistedOneKE</a>. Banner by <a href="https://vgen.co/Auri_Arts" target="_blank" rel="noopener noreferrer">Auri Arts</a>.</p>
+      </div>
+      <nav aria-label="Clan">
+        <p class="home-footer-title">Clan</p>
+        <a href="alliance.html">Alliance</a>
+        <a href="about/rules.html">Rules</a>
+        <a href="about/about-tiers.html">Clan tiers</a>
+        <a href="about/language-requirements.html">Language</a>
+      </nav>
+      <nav aria-label="Community">
+        <p class="home-footer-title">Community</p>
+        <a href="events/index.html">Events</a>
+        <a href="faq.html">FAQ</a>
+        <a href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">Discord</a>
+      </nav>
+    </div>
   </footer>
 
 </body>
