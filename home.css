@@ -398,6 +398,78 @@ body.home {
   border-color: var(--cyan);
 }
 
+/* Shorter hero for inner pages */
+.home-hero-short {
+  min-height: min(62vh, 620px);
+}
+
+.home-hero-emblems {
+  display: flex;
+  gap: clamp(14px, 2vw, 26px);
+  margin-bottom: 18px;
+}
+
+.home-hero-emblems img {
+  width: clamp(64px, 7.5vw, 104px);
+  height: clamp(64px, 7.5vw, 104px);
+  object-fit: contain;
+  filter:
+    brightness(0.93)
+    drop-shadow(0 8px 12px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 0 20px rgba(95, 216, 212, 0.32));
+}
+
+.home-nav-links a[aria-current="page"] {
+  color: var(--gold-bright);
+}
+
+/* Events page */
+.home-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.home-split .carousel-container {
+  margin: 0;
+}
+
+.home .events-desc {
+  max-width: 860px;
+  margin: 14px 0 0;
+  font-size: 16px;
+}
+
+.home .giveaways-faq-grid {
+  margin-top: 26px;
+}
+
+@media (max-width: 980px) {
+  .home-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+}
+
+/* FAQ and Rules pages */
+.home-section h2 + .faq-grid {
+  margin-top: 26px;
+}
+
+.home .faq-grid {
+  align-items: start;
+}
+
+.home-section h2.rule-title {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.home .rule-subtext {
+  font-size: 14.5px;
+}
+
 /* Final join */
 .home-final {
   border-top: 1px solid rgba(109, 92, 60, 0.55);
