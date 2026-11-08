@@ -398,9 +398,39 @@ body.home {
   border-color: var(--cyan);
 }
 
+/* Clan cards with a longer description */
+.home-clan-details {
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 6px 0 16px;
+  text-align: left;
+}
+
+.home-clan-details p:not(.home-clan-meta) {
+  margin-bottom: 0;
+}
+
+.home-note {
+  max-width: 640px;
+  margin: 30px auto 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.home-note a {
+  color: var(--cyan-bright);
+  text-underline-offset: 3px;
+}
+
 /* Shorter hero for inner pages */
 .home-hero-short {
   min-height: min(62vh, 620px);
+}
+
+.home-hero-compact {
+  min-height: min(36vh, 340px);
 }
 
 .home-hero-emblems {
