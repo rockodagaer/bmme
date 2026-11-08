@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fembot Privacy Policy</title>
+<style>
+:root{color-scheme:light dark;--bg:#fff;--fg:#1b1b1f;--muted:#5b5b66;--code:#f0f0f4}
+@media (prefers-color-scheme:dark){:root{--bg:#16161a;--fg:#e8e8ee;--muted:#a0a0ad;--code:#26262d}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 4rem}
+h1{font-size:1.8rem}h2{font-size:1.2rem;margin-top:2rem}
+code{background:var(--code);padding:.1em .35em;border-radius:4px}
+li{margin:.3rem 0}
+</style></head><body><main>
+<h1>Fembot Privacy Policy</h1>
+<p><strong>Effective date:</strong> 8 November 2026<br>
+<strong>Operator:</strong> __v33__<br>
+<strong>Contact:</strong> theaft3rmath@proton.me</p>
+<p>Fembot is a small, hobby Discord bot: a joke chatbot with some Warframe information, a few fun commands and a few moderation tools. This page explains what it does with information. In short: it keeps very little, it keeps it anonymously where it can, and it never sells or shares it.</p>
+<p>The same summary is available inside Discord with the <code>/about</code> command.</p>
+<h2>1. What the bot can see</h2>
+<p>To work, the bot must be allowed to read messages in the channels it can access (Discord&#x27;s &quot;Message Content&quot; permission) and to see members and their roles (Discord&#x27;s &quot;Server Members&quot; permission). It looks at most messages only for one purpose, the banned-emoji check described in section 3, and keeps nothing from them. It only *responds to* messages that mention it or reply to it.</p>
+<h2>2. What the bot stores</h2>
+<p><strong>a) Messages the bot didn&#x27;t understand (anonymous log).</strong> If you mention the bot or reply to it and it doesn&#x27;t understand, the text may be saved to help improve it. Each entry contains only:</p>
+<ul>
+<li>the message text, after the bot removes mentions, links (except links to well-known GIF sites, kept without their query strings), e-mail addresses and long numbers;</li>
+<li>the date (no time of day);</li>
+<li>whether it was a mention, a reply, or feedback;</li>
+<li>optionally, which of the bot&#x27;s own messages you replied to, and what that message said (the bot&#x27;s own words, never yours);</li>
+<li>a &quot;moderator&quot; flag if a moderator sent it using <code>/feedback</code>.</li>
+</ul>
+<p>It does <strong>not</strong> contain your name, user ID, server, channel, message ID or exact time. Messages containing words on the bot&#x27;s slur list are never saved. Entries are deleted automatically after <strong>30 days</strong>. Text you send with <code>/feedback</code> is saved the same way (up to 1,000 characters).</p>
+<p>The cleaning is automatic and cannot catch everything, for example a name typed in plain text, so please don&#x27;t put personal information in messages to the bot.</p>
+<p>The log is read by the operator only, for debugging and improving the bot. It may also be kept and used where necessary for legal, safety or security reasons, for example to investigate abuse or to respond to a lawful request.</p>
+<p><strong>b) Your storage opt-out.</strong> <code>/optout storage</code> stops the bot from saving any of your messages. To remember your choice, the bot stores a one-way keyed hash of your Discord user ID (not the ID itself) and nothing else about you. It is kept until you opt back in with <code>/optin storage</code>.</p>
+<p><strong>c) Server settings.</strong> For each server it is in, the bot stores the choices that server&#x27;s administrators make with <code>/settings</code>: whether the welcome message is on, which picture it uses, and role and channel IDs (moderator roles, the mute role, the notice channel, roles <code>/giverole</code> may hand out). It also stores that server&#x27;s banned-emoji list. This contains no information about any person. It is kept until the bot is removed from the server (or you ask for it to be deleted).</p>
+<p><strong>d) Mood.</strong> The bot has a daily &quot;mood&quot; number for each server. It stores only the server ID, the date and the number. It is nudged up or down by friendly or rude messages, but nothing about who or what caused it is kept.</p>
+<h2>3. Things the bot does without storing anything</h2>
+<ul>
+<li><strong>Banned emojis.</strong> Messages, edits and reactions are checked, in memory, against the server&#x27;s banned-emoji list. If a non-moderator uses a banned emoji, the bot gives them the server&#x27;s mute role and posts a notice in the server&#x27;s moderator channel (who, where, which emoji and a link to the message). That notice is an ordinary Discord message in that server; the bot keeps no separate record. Messages without a banned emoji are not kept.</li>
+<li><strong>Slurs.</strong> Messages sent *to the bot* are checked in memory against a list of slurs. If someone sends one, the bot does not answer normally and the message is not saved. If three such messages are sent in one server within an hour, the bot stops answering chat in that server for 30 minutes. For this it keeps only timestamps in memory (no user IDs, no text), which are lost when the bot restarts. It may post a notice (with a link to the latest message) in the server&#x27;s moderator channel.</li>
+<li><strong>Welcome messages.</strong> If a server turns them on, the bot greets new members by mentioning them. Nothing about them is saved.</li>
+<li><strong>Commands.</strong> <code>/ship</code>, <code>/femboyify</code>, <code>/dice</code>, <code>/fortune</code>, <code>/cats</code>, <code>/dogs</code>, <code>/mood</code> and similar are processed in memory and not saved. <code>/ship</code> calculates its score from the two user IDs without storing them.</li>
+<li><strong>Warframe commands.</strong> <code>/baro</code>, <code>/cycles</code> and the others fetch public game data from warframestat.us. No information about you is sent to it.</li>
+</ul>
+<h2>4. Who it is shared with</h2>
+<p>Nobody, except:</p>
+<ul>
+<li><strong>Discord</strong>, which delivers the messages and commands (see Discord&#x27;s own privacy policy);</li>
+<li>the <strong>hosting provider</strong> where the bot&#x27;s files are kept;</li>
+<li>anyone to whom the law requires the operator to disclose information.</li>
+</ul>
+<p>Information is never sold, used for advertising, or used to train machine-learning or AI models.</p>
+<h2>5. Your choices and rights</h2>
+<ul>
+<li>Use <code>/optout storage</code> at any time to stop your messages being saved, and <code>/optstatus storage</code> to check.</li>
+<li>Because log entries are anonymous, the bot cannot find or delete one particular person&#x27;s entries afterwards. Opting out prevents future saving, and everything is deleted after 30 days. If you believe an entry contains information about you, contact the operator with the approximate date and wording and it will be removed.</li>
+<li>You can ask the operator what information is held about you or to delete it, using the contact above. For the opt-out hash, the operator can remove it on request.</li>
+<li>Server administrators can turn off the welcome message and the moderation features, remove the bot from the server at any time, and ask the operator to delete the server&#x27;s settings.</li>
+</ul>
+<h2>6. Security and retention</h2>
+<p>The bot&#x27;s files are kept on a private server that only the operator can access. The anonymous log is deleted after 30 days; opt-out hashes are kept until you opt in again; server settings and moods are kept until the bot leaves the server. Backups of these files may exist for a short time.</p>
+<h2>7. Children</h2>
+<p>Discord requires its users to be at least 13 years old (or the minimum age in their country). The bot is not aimed at children and does not knowingly collect information from anyone under that age.</p>
+<h2>8. Changes</h2>
+<p>If this policy changes, the effective date above will be updated. Significant changes will also be reflected in <code>/about</code>.</p>
+<h2>9. Contact</h2>
+<p>Questions or requests: see the contact at the top of this page.</p>
+</main></body></html>
