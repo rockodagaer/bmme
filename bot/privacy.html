@@ -41,7 +41,8 @@ li{margin:.3rem 0}
 <li><strong>Welcome messages.</strong> If a server turns them on, the bot greets new members by mentioning them. Nothing about them is saved.</li>
 <li><strong>Commands.</strong> <code>/ship</code>, <code>/femboyify</code>, <code>/dice</code>, <code>/fortune</code>, <code>/cats</code>, <code>/dogs</code>, <code>/mood</code>, <code>/define</code> and similar are processed in memory and not saved. <code>/define</code> looks words up in a dictionary stored with the bot, so the word is not sent anywhere. <code>/ship</code> calculates its score from the two user IDs without storing them.</li>
 <li><strong>Warframe commands.</strong> <code>/baro</code>, <code>/cycles</code> and the others fetch public game data from warframestat.us. No information about you is sent to it.</li>
-<li><strong>Item look-ups.</strong> <code>/item</code>, <code>/drops</code> and asking the bot an item question in chat (for example &quot;where do I get Rhino Prime?&quot;) send <strong>the item name</strong> (a few words) to warframestat.us to look it up. It is sent without your name, user ID, server or the rest of your message, and the bot does not save it; warframestat.us only sees the bot&#x27;s own connection and handles requests under its own terms. In chat, only a question the bot did not otherwise understand and that looks like an item question is looked up, never a message containing a slur. Answers are kept in the bot&#x27;s memory for a few hours, so repeated questions don&#x27;t contact it again.</li>
+<li><strong>Drop look-ups.</strong> <code>/drops</code> and asking where to get something in chat (for example &quot;where do I get Rhino Prime?&quot;) are answered from a copy of Warframe&#x27;s official, public drop table. The bot downloads that file from its publisher now and then (an ordinary request for a public file that contains nothing about you), so the item name you type is not sent anywhere.</li>
+<li><strong>Item look-ups.</strong> <code>/item</code> and questions like &quot;tell me about Soma Prime&quot; send <strong>the item name</strong> (a few words) to warframestat.us to look it up. It is sent without your name, user ID, server or the rest of your message, and the bot does not save it; warframestat.us only sees the bot&#x27;s own connection and handles requests under its own terms. If the drop table is unavailable, <code>/drops</code> does the same. In chat, only a question the bot did not otherwise understand and that looks like an item question is looked up, never a message containing a slur. Answers are kept in the bot&#x27;s memory for a few hours, so repeated questions don&#x27;t contact it again.</li>
 </ul>
 <h2>4. Who it is shared with</h2>
 <p>Nobody, except:</p>
@@ -49,6 +50,7 @@ li{margin:.3rem 0}
 <li><strong>Discord</strong>, which delivers the messages and commands (see Discord&#x27;s own privacy policy);</li>
 <li>the <strong>hosting provider</strong> where the bot&#x27;s files are kept;</li>
 <li><strong>warframestat.us</strong>, the public game-data service, which receives only the item names described in section 3 (and the requests for world-state data);</li>
+<li><strong>Digital Extremes</strong>&#x27; public servers, which the bot contacts to download the public drop table (no information about anyone is sent);</li>
 <li><strong>AI development tools</strong> that may be used to assist in building and maintaining the bot (see below);</li>
 <li>anyone to whom the law requires the operator to disclose information.</li>
 </ul>
@@ -62,7 +64,7 @@ li{margin:.3rem 0}
 <li>Server administrators can turn off the welcome message and the moderation features, remove the bot from the server at any time, and ask the operator to delete the server&#x27;s settings.</li>
 </ul>
 <h2>6. Security and retention</h2>
-<p>The bot&#x27;s files are kept on a private server that only the operator can access. The anonymous log is deleted after 30 days; opt-out hashes are kept until you opt in again or delete them with <code>/forgetme</code>; server settings, banned-emoji lists and moods are kept until the bot leaves the server. Backups of these files may exist for a short time.</p>
+<p>The bot&#x27;s files are kept on a private server that only the operator can access. The anonymous log is deleted after 30 days; opt-out hashes are kept until you opt in again or delete them with <code>/forgetme</code>; server settings, banned-emoji lists and moods are kept until the bot leaves the server. A copy of the public drop table is kept and replaced when a newer one is published (it contains no personal information). Backups of these files may exist for a short time.</p>
 <p><strong>If a server removes the bot.</strong> The server&#x27;s saved data is deleted straight away if the bot is online when it is removed. If the bot is offline at that moment, the data stays until the bot next checks, which it does daily once it is running again, and it deletes the data of servers it hasn&#x27;t been in for 7 days. To be sure that a server&#x27;s data is deleted at once, contact the operator directly. This data contains no information about any person.</p>
 <h2>7. Children</h2>
 <p>Discord requires its users to be at least 13 years old (or the minimum age in their country). The bot is not aimed at children and does not knowingly collect information from anyone under that age.</p>
