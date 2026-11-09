@@ -11,7 +11,7 @@ code{background:var(--code);padding:.1em .35em;border-radius:4px}
 li{margin:.3rem 0}
 </style></head><body><main>
 <h1>Fembot Privacy Policy</h1>
-<p><strong>Effective date:</strong> 8 November 2026<br>
+<p><strong>Effective date:</strong> 9 November 2026<br>
 <strong>Operator:</strong> __v33__<br>
 <strong>Contact:</strong> theaft3rmath@proton.me</p>
 <p>Fembot is a small, hobby Discord bot: a joke chatbot with some Warframe information, a few fun commands and a few moderation tools. This page explains what it does with information. In short: it keeps very little, it keeps it anonymously where it can, and it never sells it. It is only shared in the limited ways listed in section 4, which include AI tools used to assist development.</p>
@@ -30,7 +30,7 @@ li{margin:.3rem 0}
 <p>It does <strong>not</strong> contain your name, user ID, server, channel, message ID or exact time. Messages containing words on the bot&#x27;s slur list are never saved. Entries are deleted automatically after <strong>30 days</strong>. Text you send with <code>/feedback</code> is saved the same way (up to 1,000 characters).</p>
 <p>The cleaning is automatic and cannot catch everything, for example a name typed in plain text, so please don&#x27;t put personal information in messages to the bot.</p>
 <p>The log is read by the operator, for debugging and improving the bot, and may be processed by AI tools used to assist development (see section 4). It may also be kept and used where necessary for legal, safety or security reasons, for example to investigate abuse or to respond to a lawful request.</p>
-<p><strong>b) Your storage opt-out.</strong> <code>/optout storage</code> stops the bot from saving any of your messages. To remember your choice, the bot stores a one-way keyed hash of your Discord user ID (not the ID itself) and nothing else about you. It is kept until you opt back in with <code>/optin storage</code>.</p>
+<p><strong>b) Your storage opt-out.</strong> <code>/optout storage</code> stops the bot from saving any of your messages. To remember your choice, the bot stores a one-way keyed hash of your Discord user ID (not the ID itself) and nothing else about you. It is kept until you opt back in with <code>/optin storage</code>, or delete it yourself at any time with <code>/forgetme</code> (that puts you back to the default, so your messages may be stored again unless you opt out again).</p>
 <p><strong>c) Server settings.</strong> For each server it is in, the bot stores the choices that server&#x27;s administrators make with <code>/settings</code>: whether the welcome message is on, which picture it uses, and role and channel IDs (moderator roles, the mute role, the notice channel, roles <code>/giverole</code> may hand out). It also stores that server&#x27;s banned-emoji list. This contains no information about any person. It is kept until the bot is removed from the server (or you ask for it to be deleted).</p>
 <p><strong>d) Mood.</strong> The bot has a daily &quot;mood&quot; number for each server. It stores only the server ID, the date and the number. It is nudged up or down by friendly or rude messages, but nothing about who or what caused it is kept.</p>
 <h2>3. Things the bot does without storing anything</h2>
@@ -41,12 +41,14 @@ li{margin:.3rem 0}
 <li><strong>Welcome messages.</strong> If a server turns them on, the bot greets new members by mentioning them. Nothing about them is saved.</li>
 <li><strong>Commands.</strong> <code>/ship</code>, <code>/femboyify</code>, <code>/dice</code>, <code>/fortune</code>, <code>/cats</code>, <code>/dogs</code>, <code>/mood</code>, <code>/define</code> and similar are processed in memory and not saved. <code>/define</code> looks words up in a dictionary stored with the bot, so the word is not sent anywhere. <code>/ship</code> calculates its score from the two user IDs without storing them.</li>
 <li><strong>Warframe commands.</strong> <code>/baro</code>, <code>/cycles</code> and the others fetch public game data from warframestat.us. No information about you is sent to it.</li>
+<li><strong>Item look-ups.</strong> <code>/item</code>, <code>/drops</code> and asking the bot an item question in chat (for example &quot;where do I get Rhino Prime?&quot;) send <strong>the item name</strong> (a few words) to warframestat.us to look it up. It is sent without your name, user ID, server or the rest of your message, and the bot does not save it; warframestat.us only sees the bot&#x27;s own connection and handles requests under its own terms. In chat, only a question the bot did not otherwise understand and that looks like an item question is looked up, never a message containing a slur. Answers are kept in the bot&#x27;s memory for a few hours, so repeated questions don&#x27;t contact it again.</li>
 </ul>
 <h2>4. Who it is shared with</h2>
 <p>Nobody, except:</p>
 <ul>
 <li><strong>Discord</strong>, which delivers the messages and commands (see Discord&#x27;s own privacy policy);</li>
 <li>the <strong>hosting provider</strong> where the bot&#x27;s files are kept;</li>
+<li><strong>warframestat.us</strong>, the public game-data service, which receives only the item names described in section 3 (and the requests for world-state data);</li>
 <li><strong>AI development tools</strong> that may be used to assist in building and maintaining the bot (see below);</li>
 <li>anyone to whom the law requires the operator to disclose information.</li>
 </ul>
@@ -56,11 +58,11 @@ li{margin:.3rem 0}
 <ul>
 <li>Use <code>/optout storage</code> at any time to stop your messages being saved, and <code>/optstatus storage</code> to check.</li>
 <li>Because log entries are anonymous, the bot cannot find or delete one particular person&#x27;s entries afterwards. Opting out prevents future saving, and everything is deleted after 30 days. If you believe an entry contains information about you, contact the operator with the approximate date and wording and it will be removed from the bot&#x27;s files. Copies already processed by AI development tools (section 4) can&#x27;t be recalled.</li>
-<li>You can ask the operator what information is held about you or to delete it, using the contact above. For the opt-out hash, the operator can remove it on request (which puts you back to the default, so your messages may be stored again unless you opt out again).</li>
+<li>You can ask the operator what information is held about you or to delete it, using the contact above. You don&#x27;t need to contact anyone to delete the opt-out hash: <code>/forgetme</code> does it immediately (the operator can also remove it on request). Deleting it puts you back to the default, so your messages may be stored again unless you opt out again.</li>
 <li>Server administrators can turn off the welcome message and the moderation features, remove the bot from the server at any time, and ask the operator to delete the server&#x27;s settings.</li>
 </ul>
 <h2>6. Security and retention</h2>
-<p>The bot&#x27;s files are kept on a private server that only the operator can access. The anonymous log is deleted after 30 days; opt-out hashes are kept until you opt in again; server settings, banned-emoji lists and moods are kept until the bot leaves the server. Backups of these files may exist for a short time.</p>
+<p>The bot&#x27;s files are kept on a private server that only the operator can access. The anonymous log is deleted after 30 days; opt-out hashes are kept until you opt in again or delete them with <code>/forgetme</code>; server settings, banned-emoji lists and moods are kept until the bot leaves the server. Backups of these files may exist for a short time.</p>
 <p><strong>If a server removes the bot.</strong> The server&#x27;s saved data is deleted straight away if the bot is online when it is removed. If the bot is offline at that moment, the data stays until the bot next checks, which it does daily once it is running again, and it deletes the data of servers it hasn&#x27;t been in for 7 days. To be sure that a server&#x27;s data is deleted at once, contact the operator directly. This data contains no information about any person.</p>
 <h2>7. Children</h2>
 <p>Discord requires its users to be at least 13 years old (or the minimum age in their country). The bot is not aimed at children and does not knowingly collect information from anyone under that age.</p>
@@ -68,6 +70,4 @@ li{margin:.3rem 0}
 <p>If this policy changes, the effective date above will be updated. Significant changes will also be reflected in <code>/about</code>.</p>
 <h2>9. Contact</h2>
 <p>Questions or requests: see the contact at the top of this page. The bot&#x27;s <a href="terms.html">Terms of Service</a> apply too.</p>
-</main>
-<footer style="max-width:46rem;margin:0 auto;padding:0 1rem 2rem;color:var(--muted);font-size:.9rem">Donations are never expected, but I'd appreciate it a lot. <a href="https://ko-fi.com/lowkjustvee" target="_blank" rel="noopener noreferrer">Donate on Ko-fi</a></footer>
-</body></html>
+</main></body></html>
