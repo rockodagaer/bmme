@@ -29,9 +29,9 @@ body.home {
 }
 
 .home-nav-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
   max-width: 1200px;
   height: 60px;
@@ -40,6 +40,7 @@ body.home {
 }
 
 .home-brand {
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -51,6 +52,10 @@ body.home {
 
 .home-brand img {
   object-fit: contain;
+}
+
+.home-nav-join {
+  justify-self: end;
 }
 
 .home-nav-links {
