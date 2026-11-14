@@ -25,6 +25,7 @@
   <link rel="icon" type="image/png" href="/images/favicon.png" sizes="48x48">
   <link rel="apple-touch-icon" href="/images/logo.png">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../home.css">
 
   <script type="application/ld+json">
   {
@@ -54,81 +55,101 @@
           "@type": "Answer",
           "text": "We outgrew our old Storm clan tier, so we upgraded to Mountain to make room for more members. Technically we could increase our clan tier again at any time, but we currently do not see the need."
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Why are these pills even clickable?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Because I wanted to make the “Events & Giveaways” pill clickable… but I forgot that I had to actually convey to the user that that’s even a thing you can do… SO CLICK ON THAT PILL, IT’S THE ONLY USEFUL ONE! ]:<"
-        }
       }
     ]
   }
   </script>
 </head>
-<body>
+<body class="home">
 
-  <div class="banner" id="banner">
-    <picture>
-      <source media="(max-width: 640px)" srcset="../images/styanax-960x540.webp">
-      <img src="../images/styanax-1500x500.webp" alt="Big Muscly Men Enjoyers banner featuring Warframe Styanax artwork by Auri Arts" width="1500" height="500" fetchpriority="high">
-    </picture>
-  </div>
-
-  <main class="page faq-page" id="main-content">
-
-    <h1 class="clan-name" id="page-title">Clan Tiers</h1>
-    <p class="tagline" id="page-tagline">Information regarding clan tiers and our <span class="highlight">Mountain Clan</span> tier in <span class="highlight">BMME</span>.</p>
-
-    <div class="nav-links" id="nav-links">
-      <a class="nav-link" href="../index.html" id="nav-home">&larr; Back to BMME</a>
-      <span class="nav-sep" id="sep-faq">&middot;</span>
-      <a class="nav-link" href="../faq.html" id="nav-faq">Read the FAQ &rarr;</a>
-      <span class="nav-sep">&middot;</span>
-      <a class="nav-link nav-link-alliance" href="../alliance.html" id="nav-alliance">Lotus' Gardens Alliance &rarr;</a>
-      <span class="nav-sep nav-sep-alliance" id="sep-alliance">&middot;</span>
-      <a class="nav-link" href="../events/index.html" id="nav-events">Events &amp; Giveaways &rarr;</a>
+  <header class="home-nav">
+    <div class="home-nav-inner">
+      <a class="home-brand" href="../index.html">
+        <img src="../images/logo.webp" alt="" width="36" height="36">
+        <span>Big Muscly Men Enjoyers</span>
+      </a>
+      <nav class="home-nav-links" aria-label="Main">
+        <a href="../alliance.html">Alliance</a>
+        <a href="../events/index.html">Events</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../about/rules.html">Rules</a>
+      </nav>
+      <a class="home-btn-quiet home-nav-join" href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">Join</a>
     </div>
+  </header>
 
-    <section class="faq-section" id="tiers-faq-section">
+  <main>
+
+    <section class="home-hero home-hero-short">
+      <img class="home-hero-art" src="../images/styanax-1920x1080.webp" alt="Warframe Styanax artwork by Auri Arts" width="1920" height="1080" fetchpriority="high">
+      <div class="home-hero-inner">
+        <img class="home-hero-emblem" src="../images/logo.webp" alt="Big Muscly Men Enjoyers clan emblem created by TheTwistedOneKE" width="1024" height="1024">
+        <h1>Clan Tiers</h1>
+        <p class="home-hero-line">Information regarding clan tiers and our <span class="highlight">Mountain Clan</span> tier in <span class="highlight">BMME</span>.</p>
+      </div>
+    </section>
+
+    <section class="home-section" id="tiers-faq-section">
+      <div class="home-wrap">
       <div class="faq-grid" id="tiers-faq-grid">
 
-        <details class="faq-item" id="faq-what-is-storm-clan">
-          <summary id="summary-what-is-storm-clan">What is a mountain clan?</summary>
-          <p class="faq-answer" id="answer-what-is-storm-clan">A mountain clan is a specific clan tier in Warframe that means that the clan has a max capacity of 300 members, with a 30x resource cost multiplier.</p>
+        <details class="faq-item" id="faq-what-is-mountain-clan">
+          <summary>What is a mountain clan?</summary>
+          <p class="faq-answer">A mountain clan is a specific clan tier in Warframe that means that the clan has a max capacity of 300 members, with a 30x resource cost multiplier.</p>
         </details>
 
         <details class="faq-item" id="faq-other-clan-tiers">
-          <summary id="summary-other-clan-tiers">What other clan tiers are there?</summary>
-          <p class="faq-answer" id="answer-other-clan-tiers">The clan tiers go as follows: Ghost, Shadow, Storm, Mountain, and Moon.</p>
+          <summary>What other clan tiers are there?</summary>
+          <p class="faq-answer">The clan tiers go as follows: Ghost, Shadow, Storm, Mountain, and Moon.</p>
         </details>
 
-        <details class="faq-item" id="faq-why-storm-clan">
-          <summary id="summary-why-storm-clan">Why are you a mountain clan?</summary>
-          <p class="faq-answer" id="answer-why-storm-clan">We outgrew our old Storm clan tier, so we upgraded to Mountain to make room for more members. Technically we could increase our clan tier again at any time, but we currently do not see the need.</p>
+        <details class="faq-item" id="faq-why-mountain-clan">
+          <summary>Why are you a mountain clan?</summary>
+          <p class="faq-answer">We outgrew our old Storm clan tier, so we upgraded to Mountain to make room for more members. Technically we could increase our clan tier again at any time, but we currently do not see the need.</p>
         </details>
 
-        <details class="faq-item" id="faq-why-clickable-pills">
-          <summary id="summary-why-clickable-pills">Why are these pills even clickable?</summary>
-          <p class="faq-answer" id="answer-why-clickable-pills">Because I wanted to make the “Events &amp; Giveaways” pill clickable… but I forgot that I had to actually convey to the user that that’s even a thing you can do… SO CLICK ON THAT PILL, IT’S THE ONLY USEFUL ONE! ]:&#60;</p>
-        </details>
+      </div>
+      </div>
+    </section>
 
+    <section class="home-section home-final">
+      <div class="home-wrap">
+        <h2>Got more questions?</h2>
+        <p>The FAQ covers joining the clan and the alliance.</p>
+        <div class="home-actions">
+          <a class="discord-btn" href="../faq.html">Read the FAQ</a>
+          <a class="home-btn-quiet" href="../join.html">How to join</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <p class="credits" id="site-credits">
-    Special thanks to <a href="https://thetwistedoneke.carrd.co/" target="_blank" rel="noopener noreferrer">TheTwistedOneKE</a> for creating our clan emblem.<br>
-    Special thanks to <a href="https://vgen.co/Auri_Arts" target="_blank" rel="noopener noreferrer">Auri Arts</a> for creating our banner.
-  </p>
-
-  <footer class="site-footer" id="site-footer">
-    <p>Big Muscly Men Enjoyers — Warframe Clan</p>
-    <div class="donate">
-      <p class="donate-note">Donations are never expected, but I'd appreciate it a lot.</p>
-      <a class="donate-btn" href="https://ko-fi.com/lowkjustvee" target="_blank" rel="noopener noreferrer">Donate on Ko-fi</a>
+  <footer class="home-footer">
+    <div class="home-wrap home-footer-grid">
+      <div>
+        <p class="home-footer-name">Big Muscly Men Enjoyers</p>
+        <p>Emblem by <a href="https://thetwistedoneke.carrd.co/" target="_blank" rel="noopener noreferrer">TheTwistedOneKE</a>. Banner by <a href="https://vgen.co/Auri_Arts" target="_blank" rel="noopener noreferrer">Auri Arts</a>.</p>
+        <div class="donate">
+          <p class="donate-note">Donations are never expected, but I'd appreciate it a lot.</p>
+          <a class="donate-btn" href="https://ko-fi.com/lowkjustvee" target="_blank" rel="noopener noreferrer">Donate on Ko-fi</a>
+        </div>
+      </div>
+      <nav aria-label="Clan">
+        <p class="home-footer-title">Clan</p>
+        <a href="../index.html">Home</a>
+        <a href="../join.html">How to join</a>
+        <a href="../alliance.html">Alliance</a>
+        <a href="../about/rules.html">Rules</a>
+        <a href="../about/about-tiers.html">Clan tiers</a>
+        <a href="../about/language-requirements.html">Language</a>
+      </nav>
+      <nav aria-label="Community">
+        <p class="home-footer-title">Community</p>
+        <a href="../events/index.html">Events</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">Discord</a>
+      </nav>
     </div>
   </footer>
 
