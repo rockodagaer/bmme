@@ -675,3 +675,140 @@ body.home {
   background: #fff;
 }
 .mod-pdf-fallback { text-align: center; margin-top: 1rem; font-size: 0.9rem; }
+
+/* Current event page and "live now" banner */
+.event-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  padding: 10px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--gold-dim);
+  color: var(--text);
+  font-size: 14.5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.event-banner-cta {
+  color: var(--gold-bright);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.event-banner:hover .event-banner-cta,
+.event-banner:focus-visible .event-banner-cta {
+  color: var(--cyan-bright);
+}
+
+.event-hero .home-hero-line {
+  max-width: 640px;
+  margin: 16px 0 22px;
+}
+
+.event-h1-prize {
+  display: block;
+  margin-top: 8px;
+  color: var(--gold-bright);
+  font-size: 0.62em;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+}
+
+.event-countdown {
+  margin: 0 0 24px;
+  color: var(--text);
+  font-size: 16px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+.event-countdown-label {
+  color: var(--text);
+}
+
+.event-countdown-time {
+  margin-left: 6px;
+  color: var(--cyan-bright);
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.event-countdown.is-closed .event-countdown-label {
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+
+.event-prizes {
+  max-width: 560px;
+  margin: 26px 0 0;
+  padding: 0;
+  border: 1px solid var(--gold-dim);
+  border-radius: 8px;
+  list-style: none;
+}
+
+.event-prizes li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  color: var(--text);
+  font-size: 17px;
+}
+
+.event-prizes li + li {
+  border-top: 1px solid var(--gold-dim);
+}
+
+.event-prizes li span:last-child {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.event-prizes .event-prize-first span:last-child {
+  color: var(--gold-bright);
+}
+
+.event-prizes .event-prize-joke {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.event-prize-note {
+  margin: 10px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.event-list {
+  margin: 16px 0 0;
+  padding-left: 22px;
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.event-list li + li {
+  margin-top: 8px;
+}
+
+.event-list a {
+  color: var(--cyan-bright);
+  text-underline-offset: 3px;
+}
+
+.event-judging,
+.event-faq {
+  margin-top: 26px;
+}
+
+@media (max-width: 760px) {
+  .event-countdown-time {
+    display: block;
+    margin: 4px 0 0;
+  }
+}
