@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--
-  CURRENT EVENT PAGE
+  CURRENT EVENT PAGE (currently PENDING: no event running)
   This one URL (/events/current-event.html) stays the same for every event, so
-  search engines keep its history. To swap in a new event, edit only the spots
-  marked "EDIT:" below:
-    1. <head>: title, description, og/twitter text, JSON-LD (name, description, endDate)
-    2. Hero: h1, line, prize total, countdown (data-deadline is a Unix timestamp in seconds)
-    3. Prizes, rules, steps, judging criteria and FAQ sections
-  Also update the event banner in /index.html and /events/index.html,
-  and bump <lastmod> for this page in /sitemap.xml.
-  Dates show in each visitor's local time. The countdown switches itself to
-  "Submissions are closed" once the deadline passes.
+  search engines keep its history. The last full event page is archived at
+  /events/fashionframe-contest-2026.html. To start a new event, copy that file's
+  contents back here, drop its noindex tag, and edit the spots marked "EDIT:".
+  Also re-add the event banner in /index.html and /events/index.html (the
+  commented-out snippet is above <main> in each), and bump <lastmod> in /sitemap.xml.
 -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- EDIT: title, description, og/twitter text -->
-  <title>Warframe Fashionframe Contest: 8,000 Plat Prize Pool | BMME Clan Event</title>
-  <meta name="description" content="Enter our Warframe Fashionframe and Captura contest for an 8,000 platinum prize pool. 5,000 plat for first place. Rules, judging criteria and deadline inside.">
+  <title>Current Event: Coming Soon | BMME Warframe Clan</title>
+  <meta name="description" content="No event is running in the BMME Warframe clan right now. Join our Discord to hear about the next Fashionframe contest or giveaway first.">
   <link rel="canonical" href="https://bmme.online/events/current-event.html">
 
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -27,45 +22,21 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Warframe Fashionframe Contest: 8,000 Plat Prize Pool | BMME">
-  <meta property="og:description" content="Our Captura and fashion contest is live. 5,000 plat for first place, 8,000 plat in total. See the rules and enter in our Discord.">
+  <meta property="og:title" content="Current Event: Coming Soon | BMME">
+  <meta property="og:description" content="No event is running right now. Join the BMME Discord to hear about the next one first.">
   <meta property="og:url" content="https://bmme.online/events/current-event.html">
   <meta property="og:image" content="https://bmme.online/images/styanax-1920x1080.webp">
   <meta property="og:site_name" content="Big Muscly Men Enjoyers">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Warframe Fashionframe Contest: 8,000 Plat Prize Pool | BMME">
-  <meta name="twitter:description" content="Our Captura and fashion contest is live. 5,000 plat for first place, 8,000 plat in total. See the rules and enter in our Discord.">
+  <meta name="twitter:title" content="Current Event: Coming Soon | BMME">
+  <meta name="twitter:description" content="No event is running right now. Join the BMME Discord to hear about the next one first.">
   <meta name="twitter:image" content="https://bmme.online/images/styanax-1920x1080.webp">
 
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../home.css">
 
-  <!-- EDIT: name, description and endDate (UTC) of the current event -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "BMME Warframe Fashionframe and Captura Contest",
-    "description": "A Warframe Fashionframe and Captura contest with an 8,000 platinum prize pool: 5,000 plat for first place, 2,000 for second and 1,000 for third.",
-    "endDate": "2026-11-21T22:59:00Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-    "location": {
-      "@type": "VirtualLocation",
-      "url": "https://discord.gg/wcQE2RmbH"
-    },
-    "image": "https://bmme.online/images/styanax-1920x1080.webp",
-    "url": "https://bmme.online/events/current-event.html",
-    "isAccessibleForFree": true,
-    "organizer": {
-      "@type": "Organization",
-      "name": "Big Muscly Men Enjoyers",
-      "url": "https://bmme.online"
-    }
-  }
-  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -98,160 +69,11 @@
 
   <main>
 
-    <!-- EDIT: hero (h1, line, prize total, deadline) -->
     <section class="home-hero home-hero-short event-hero">
       <img class="home-hero-art" src="../images/styanax-1920x1080.webp" alt="Warframe Styanax artwork by Auri Arts" width="1920" height="1080" fetchpriority="high">
       <div class="home-hero-inner">
-        <h1>Warframe Fashionframe Contest <span class="event-h1-prize">8,000 Platinum Prize Pool</span></h1>
-        <p class="home-hero-line">Our Captura and fashion contest is running in the BMME Discord. Post your best frame before the deadline.</p>
-
-        <p class="event-countdown" id="event-countdown" data-deadline="1795301940">
-          <span class="event-countdown-label" id="event-countdown-label">Submissions close in</span>
-          <span class="event-countdown-time" id="event-countdown-grid" aria-hidden="true"><span id="cd-days">0</span>d <span id="cd-hours">00</span>h <span id="cd-minutes">00</span>m <span id="cd-seconds">00</span>s</span>
-        </p>
-
-        <div class="home-actions">
-          <a class="discord-btn" href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">
-            <svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.946 2.419-2.157 2.419z"/>
-            </svg>
-            Enter in our Discord
-          </a>
-          <a class="home-btn-quiet" href="#rules">Read the rules</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDIT: intro -->
-    <section class="home-section">
-      <div class="home-wrap home-about">
-        <h2>The contest</h2>
-        <p class="home-about-lead">We're running a Captura and fashion contest right now, and 8,000 platinum is up for grabs.</p>
-        <p>First place wins 5,000 plat, second wins 2,000 and third wins 1,000. Show us a Fashionframe you're proud of, with a Captura screenshot and the gear behind the look, and post it in our Discord before the deadline.</p>
-        <p>ordinarilylucky on Discord is funding the prizes, so thank them if you see them around.</p>
-      </div>
-    </section>
-
-    <!-- EDIT: prizes -->
-    <section class="home-section home-band" id="prizes">
-      <div class="home-wrap">
-        <h2>Prizes</h2>
-        <ol class="event-prizes">
-          <li class="event-prize-first"><span>1st place</span><span>5,000 plat</span></li>
-          <li><span>2nd place</span><span>2,000 plat</span></li>
-          <li><span>3rd place</span><span>1,000 plat</span></li>
-          <li class="event-prize-joke"><span>Runner up</span><span>5 XP*</span></li>
-        </ol>
-        <p class="event-prize-note">*Before the 100% tax.</p>
-      </div>
-    </section>
-
-    <!-- EDIT: rules -->
-    <section class="home-section" id="rules">
-      <div class="home-wrap home-about">
-        <h2>Contest rules</h2>
-        <p>Rule following is one of the judging criteria, so check your post against this list before you submit.</p>
-        <ul class="event-list">
-          <li>No external edited screenshots. Minor edits like cropping are fine.</li>
-          <li>Include a screenshot of the frame in your orbiter or backroom.</li>
-          <li>Include images of the attachments, skins and anything else you used.</li>
-          <li>One submission per person.</li>
-          <li>Put your IGN and platform in the post.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- EDIT: how to enter -->
-    <section class="home-section home-band" id="how-to-enter">
-      <div class="home-wrap home-about">
-        <h2>How to enter</h2>
-        <ol class="event-list">
-          <li>Join our <a href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">Discord</a> if you haven't already.</li>
-          <li>Find the contest post and read it through.</li>
-          <li>Reply to it with your screenshots, your IGN and your platform.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- EDIT: judging criteria -->
-    <section class="home-section" id="judging">
-      <div class="home-wrap">
-        <h2>How entries are judged</h2>
-        <p class="home-sub">Every fashionframe is scored on six things.</p>
-        <div class="home-grid home-grid-3 event-judging">
-          <article class="home-card">
-            <h3>Cohesion and looks</h3>
-            <p>How well the pieces of the build go together, and how it looks overall.</p>
-          </article>
-          <article class="home-card">
-            <h3>Originality</h3>
-            <p>How much of the idea is your own.</p>
-          </article>
-          <article class="home-card">
-            <h3>Attachments used</h3>
-            <p>Scored as 0, 1, or 2 or more.</p>
-          </article>
-          <article class="home-card">
-            <h3>Captura quality</h3>
-            <p>How good the screenshot itself is.</p>
-          </article>
-          <article class="home-card">
-            <h3>Effort</h3>
-            <p>How much work went into the look and the shot.</p>
-          </article>
-          <article class="home-card">
-            <h3>Rule following</h3>
-            <p>Whether your post meets the rules above.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDIT: FAQ -->
-    <section class="home-section home-band" id="contest-faq">
-      <div class="home-wrap">
-        <h2>Contest questions</h2>
-        <div class="giveaways-faq-grid event-faq">
-          <article class="home-card">
-            <h3>When is the deadline?</h3>
-            <p>Submissions close on <time class="event-local-time" datetime="2026-11-21T22:59:00Z">Saturday, November 21, 2026 at 22:59 UTC</time>. If your browser allows it, this time shows in your own time zone.</p>
-          </article>
-          <article class="home-card">
-            <h3>Where do I post my entry?</h3>
-            <p>In the replies under the contest post in our Discord.</p>
-          </article>
-          <article class="home-card">
-            <h3>What do I need to include?</h3>
-            <p>A screenshot of the frame in your orbiter or backroom, images of the attachments and skins you used, and your IGN and platform.</p>
-          </article>
-          <article class="home-card">
-            <h3>Can I enter more than once?</h3>
-            <p>No. Each person gets one submission.</p>
-          </article>
-          <article class="home-card">
-            <h3>Can I edit my screenshots?</h3>
-            <p>Only for minor things like cropping. Screenshots edited with outside tools aren't allowed.</p>
-          </article>
-          <article class="home-card">
-            <h3>How much can I win?</h3>
-            <p>5,000 plat for first place, 2,000 for second and 1,000 for third.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-section">
-      <div class="home-wrap home-about">
-        <h2>A Warframe clan that runs events</h2>
-        <p>Big Muscly Men Enjoyers is a Mountain clan of about 300 members in the <a href="../alliance.html">Lotus' Gardens</a> alliance. Besides Fashionframe contests like this one, we give away skins and collections and sometimes plat. Any mastery rank can join.</p>
-        <p>See <a href="../join.html">how to join the clan</a>, look through <a href="index.html">past Fashionframe submissions and giveaways</a>, or read the <a href="../faq.html">FAQ</a>.</p>
-      </div>
-    </section>
-
-    <section class="home-section home-final home-band">
-      <div class="home-wrap">
-        <h2>Ready to enter?</h2>
-        <p>Join the Discord, find the contest post and reply with your entry.</p>
+        <h1>No event running right now</h1>
+        <p class="home-hero-line">Our last Fashionframe contest has wrapped up. The next event will be announced in the BMME Discord first.</p>
         <div class="home-actions">
           <a class="discord-btn" href="https://discord.gg/wcQE2RmbH" target="_blank" rel="noopener noreferrer">
             <svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -259,8 +81,16 @@
             </svg>
             Join our Discord
           </a>
-          <a class="home-btn-quiet" href="index.html">All events</a>
+          <a class="home-btn-quiet" href="index.html">Past events</a>
         </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="home-wrap home-about">
+        <h2>What's next?</h2>
+        <p class="home-about-lead">We run Fashionframe contests and giveaways every so often, and this page will show the details once the next one starts.</p>
+        <p>In the meantime, look through <a href="index.html">past submissions and giveaways</a>, see <a href="../join.html">how to join the clan</a>, or read the <a href="../faq.html">FAQ</a>.</p>
       </div>
     </section>
 
@@ -294,56 +124,6 @@
       </nav>
     </div>
   </footer>
-
-  <!-- Countdown and local-time display. Reads data-deadline (Unix seconds) from #event-countdown. -->
-  <script>
-    (function () {
-      var box = document.getElementById('event-countdown');
-      if (!box) return;
-      var deadline = parseInt(box.getAttribute('data-deadline'), 10) * 1000;
-      if (!deadline) return;
-
-      var fmt;
-      try {
-        fmt = new Intl.DateTimeFormat(undefined, {
-          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-          hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
-        });
-      } catch (e) { fmt = null; }
-      if (fmt) {
-        var text = fmt.format(new Date(deadline));
-        var spots = document.querySelectorAll('.event-local-time');
-        for (var i = 0; i < spots.length; i++) spots[i].textContent = text;
-      }
-
-      var label = document.getElementById('event-countdown-label');
-      var grid = document.getElementById('event-countdown-grid');
-      var ids = { d: 'cd-days', h: 'cd-hours', m: 'cd-minutes', s: 'cd-seconds' };
-
-      function pad(n) { return n < 10 ? '0' + n : String(n); }
-
-      function tick() {
-        var left = deadline - Date.now();
-        if (left <= 0) {
-          box.classList.add('is-closed');
-          if (label) label.textContent = 'Submissions are closed';
-          if (grid) grid.hidden = true;
-          return false;
-        }
-        var s = Math.floor(left / 1000);
-        document.getElementById(ids.d).textContent = Math.floor(s / 86400);
-        document.getElementById(ids.h).textContent = pad(Math.floor(s % 86400 / 3600));
-        document.getElementById(ids.m).textContent = pad(Math.floor(s % 3600 / 60));
-        document.getElementById(ids.s).textContent = pad(s % 60);
-        if (grid) grid.removeAttribute('aria-hidden');
-        return true;
-      }
-
-      if (tick()) {
-        var timer = setInterval(function () { if (!tick()) clearInterval(timer); }, 1000);
-      }
-    })();
-  </script>
 
 </body>
 </html>
